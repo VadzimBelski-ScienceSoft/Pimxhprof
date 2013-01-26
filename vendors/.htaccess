@@ -1,0 +1,9 @@
+# rewrites
+RewriteEngine On
+RewriteBase /plugins/Pimxhprof/vendors/
+
+# allow access to the public directory
+RewriteRule ^xhprofio/public.* - [PT,L]
+
+# deny
+RewriteRule .* / [F,L]

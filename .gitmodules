@@ -1,0 +1,3 @@
+[submodule "vendors/xhprofio"]
+	path = vendors/xhprofio
+	url = https://github.com/timglabisch/xhprof.io.git

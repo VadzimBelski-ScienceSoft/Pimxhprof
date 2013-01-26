@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<zend-config xmlns:zf="http://framework.zend.com/xml/zend-config-xml/1.0/">
+		<plugin>
+			<pluginName>Pimxhprof</pluginName>
+			<pluginDescription><![CDATA[XHProf.io for Pimcore]]></pluginDescription>
+            <pluginNiceName>Pimxhprof Alpha</pluginNiceName>
+            <pluginIcon>/plugins/Pimxhprof/static/img/Pimxhprof.png</pluginIcon>
+			<pluginVersion>0.1</pluginVersion>
+            <pluginRevision>1</pluginRevision>
+            <pluginBuildTimestamp>1359231622</pluginBuildTimestamp>
+            <pluginIframeSrc></pluginIframeSrc>
+            <pluginClassName>Pimxhprof_Plugin</pluginClassName>
+			<pluginIncludePaths>
+				<path>/Pimxhprof/lib</path>
+			</pluginIncludePaths>
+            <pluginNamespaces>
+                <namespace>Pimxhprof</namespace>
+            </pluginNamespaces>
+            <pluginJsPaths>
+                <path>/plugins/Pimxhprof/static/js/admin.js</path>
+            </pluginJsPaths>
+		</plugin>
+</zend-config>
