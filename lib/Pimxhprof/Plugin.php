@@ -47,7 +47,12 @@ class Pimxhprof_Plugin extends Pimcore_API_Plugin_Abstract implements Pimcore_AP
         if(!function_exists('xhprof_enable'))
             return "Pimxhprof Plugin could not be installed - Check your xhprof installation ...";
 
-        if(!Pimcore_Resource_Mysql::getConnection()->query(file_get_contents(__DIR__.'/../../vendors/xhprofio/setup/database.sql')))
+        if(!(Pimcore_Resource_Mysql::getConnection()->getConnection() instanceof \Pdo))
+            return "The installation requires the Pdo_Mysql Adapter, sorry.";
+
+        $q = str_replace(':', '', preg_replace("/\s*(?!<\")\/\*[^\*]+\*\/(?!\")\s*/","", file_get_contents(__DIR__.'/../../vendors/xhprofio/setup/database.sql')));
+
+        if(!Pimcore_Resource_Mysql::getConnection()->query($q))
             return "Pimxhprof Plugin could not be installed - Db trouble ...";
 
         if(!touch(PIMCORE_CONFIGURATION_DIRECTORY.'/.pimxhprof.enable'))
